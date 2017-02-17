@@ -78,7 +78,7 @@ class NewEntry(Handler):
             self.redirect("/blog/"+str(count+1))
         else:
             t = jinja_env.get_template("newpost.html")
-            content = t.render(error = "You need a title and body")
+            content = t.render(error = "You need a title and body",body = body, title = title)
             self.response.write(content)
             
 class ViewPostHandler(Handler):
